@@ -1,0 +1,17 @@
+.vscode
+.code
+.idea
+site/
+venv/
+env/
+*.out
+node_modules/
+.DS_Store
+**/.DS_Store
+*.iml
+temp_dir/
+package-lock.json
+package.json
+meaningless.change
+.env
+dist/

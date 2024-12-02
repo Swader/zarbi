@@ -1,0 +1,10 @@
+{
+  "tasks": {
+    "dev": "deno run --watch src/main.ts"
+  },
+  "imports": {
+    "@std/assert": "jsr:@std/assert@1",
+    "openai": "npm:openai@^4.73.1",
+    "viem": "npm:viem@^2.21.53"
+  }
+}
