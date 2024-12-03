@@ -1,12 +1,14 @@
 import OpenAI from "npm:openai";
 import { Assistant } from "npm:openai/resources/beta/assistants";
+import { tools } from "../tools/allTools.ts";
+import { assistantPrompt } from "../const/prompts/default.ts";
 
 export async function createAssistant(client: OpenAI): Promise<Assistant> {
   const assistant = await client.beta.assistants.create({
     name: "Zarbi",
-    instructions: "You are an assistant for executing on-chain operations for the user.",
+    instructions: assistantPrompt,
     model: "gpt-4o-mini",
-    tools: [],
+    tools: Object.values(tools).map((tool) => tool.definition),
   });
 
   return assistant;

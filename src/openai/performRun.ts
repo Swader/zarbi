@@ -10,6 +10,8 @@ export async function performRun(
 ): Promise<Run> {
   while (run.status === "requires_action") {
     run = await handleRunToolCall(run, client, thread);
+    // Sleep for 1 second
+    await new Promise((resolve) => setTimeout(resolve, 1000));
   }
 
   if (run.status === "failed") {
